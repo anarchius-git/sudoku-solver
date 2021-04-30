@@ -356,33 +356,26 @@ function callBoardRefresh()
 
 function callBoardSolve()
 {
-	//alert("Board solve called");
 	// Create the 3 dimensional pencil marks array
 	var pencilMarks=new Array(9);
-	for(i=0; i<9; i++)
-	{
+	for(i=0; i<9; i++){
 		pencilMarks[i]=new Array(9);
 	}
-	for(i=0; i<9; i++)
-	{
-		for(j=0; j<9; j++)
-		{
+	for(i=0; i<9; i++){
+		for(j=0; j<9; j++){
 			pencilMarks[i][j]=new Array(9);
 		}
 	}
 	
 	// Initialize the marks to 1. Subsequently, we will start to eraze them
-	for(i=0; i<9; i++)
-	{
-		for(j=0; j<9; j++)
-		{
-			for(k=0; k<9; k++)
-			{
+	for(i=0; i<9; i++){
+		for(j=0; j<9; j++){
+			for(k=0; k<9; k++){
 				pencilMarks[i][j][k] = 1;
 			}
 		}
 	}
-	//alert("initialization complete"); //Debug
+	console.log(pencilMarks); //Debug
 	
 	// Erase marks for the filled in values. Erasemarks means that all marks in the corresponding row & column
 	// along with those in the same trident are all cleared. This will be a one-time step.
@@ -404,6 +397,7 @@ function callBoardSolve()
 			}
 		}
 	}
+	console.log(pencilMarks); //Debug
 	
 	
 	var answerFound;
